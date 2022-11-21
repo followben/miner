@@ -45,6 +45,6 @@ def test_schema_validates_incorrect_input():
     """
 
     result = schema.execute_sync(query)
-    assert len(result.errors) is 2
+    assert len(result.errors) == 2
     assert result.errors[0].message == "Cannot query field 'foo' on type 'PersonType'."
     assert result.errors[1].message == "Cannot query field 'bar' on type 'AddressType'."
