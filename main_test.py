@@ -1,7 +1,8 @@
 from main import schema
 
+from graphql import GraphQLError, SourceLocation
 
-def test_returns_expected_sample_data():
+def test_query_returns_sample_data():
     query = """
         query {
             person {
@@ -30,3 +31,20 @@ def test_returns_expected_sample_data():
                 "state": "NSW",
             },
         }
+
+def test_schema_validates_incorrect_input():
+    query = """
+        query {
+            person {
+                foo
+                address {
+                    bar
+                }
+            }
+        }
+    """
+
+    result = schema.execute_sync(query)
+    assert len(result.errors) is 2
+    assert result.errors[0].message == "Cannot query field 'foo' on type 'PersonType'."
+    assert result.errors[1].message == "Cannot query field 'bar' on type 'AddressType'."
