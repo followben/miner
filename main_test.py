@@ -1,7 +1,5 @@
 from main import schema
 
-from graphql import GraphQLError, SourceLocation
-
 
 def test_query_returns_sample_data():
     query = """
