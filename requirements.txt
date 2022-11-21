@@ -1,0 +1,4 @@
+fastapi
+pydantic
+strawberry-graphql[fastapi]
+uvicorn[standard]
