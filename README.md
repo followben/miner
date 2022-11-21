@@ -1,6 +1,6 @@
 # miner
 
-A simple project demonstrating the use of [FastAPI](https://fastapi.tiangolo.com) and [Strawberry](https://strawberry.rocks) to handle a graphql query.
+A single module [FastAPI](https://fastapi.tiangolo.com) and [Strawberry](https://strawberry.rocks) app that handles a graphql query.
 
 ## Quick Start
 
@@ -41,7 +41,7 @@ query {
 }
 ```
 
-To run tests autoformatting or linting, first install all dev libraries:
+To run tests, autoformatting or linting, first install all dev libraries:
 ```bash
 (venv) % pip install -r requirements-dev.txt
 ```
@@ -53,7 +53,7 @@ Then:
 
 
 If this were a more sophisticated project, I'd:
-- split the app into appropriate packages and modules (a single `main` module is appropriate here, but doesn't work in a real project)
+- split code into python packages and modules (a single `main.py` is appropriate for a small example, but a production service would typically contain more code; splitting into multiple files and directories allows clearer separation of concerns if correctly composed)
 - add more unit tests (thanks to the runtime checks in Strawberry and Pydantic and static analysis via Pylance/ MyPy, there's not really much to test here outside of the dependencies themselves)
 - add a mutation to create a `Person` and persist it somewhere (in memory? Redis? MongoDB? PostgreSQL?)
 - containerize the api for production (and it's dependencies via compose for local development)
