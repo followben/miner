@@ -41,9 +41,20 @@ query {
 }
 ```
 
-If this were a more sophisticated api, I'd:
-- split the project into appropriate modules and packages (a single file app is appropriate here, but doesn't work in a real project)
-- add testing via pytest (thanks to the runtime checks in Strawberry and Pydantic and static analysis via Pylance/ MyPy, there's not really much to test here outside of testing the dependencies themselves)
+To run tests autoformatting or linting, first install all dev libraries:
+```bash
+(venv) % pip install -r requirements-dev.txt
+```
+
+Then:
+- `black .` to autoformat
+- `ruff .` to lint
+- `pytest .` to run tests
+
+
+If this were a more sophisticated project, I'd:
+- split the app into appropriate packages and modules (a single `main` module is appropriate here, but doesn't work in a real project)
+- add more unit tests (thanks to the runtime checks in Strawberry and Pydantic and static analysis via Pylance/ MyPy, there's not really much to test here outside of the dependencies themselves)
 - add a mutation to create a `Person` and persist it somewhere (in memory? Redis? MongoDB? PostgreSQL?)
 - containerize the api for production (and it's dependencies via compose for local development)
 - depending on where the image is being deployed, use IaC such as Terraform, AWS CDK, ArgoCD to do that deployment
