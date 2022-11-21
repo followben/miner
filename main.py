@@ -70,7 +70,7 @@ class Query:
         return Person(**sample)
 
 
-# Create the schema and serve it via a FasrAPI endpoint
+# Create the schema and serve it via a FastAPI endpoint
 schema = strawberry.Schema(Query)
 graphql_app = GraphQLRouter(schema)
 app.include_router(graphql_app, prefix="/graphql")
