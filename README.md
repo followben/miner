@@ -14,7 +14,7 @@ Ensure python >=3.7+ is on your path, then:
 (venv) % uvicorn main:app
 ```
 
-Then either issue a standard POST query via your favourite HTTP cli:
+Then, either issue a standard HTTP `POST` request via your favourite cli:
 
 ```bash
 curl -g \
@@ -24,7 +24,7 @@ curl -g \
 http://localhost:8000/graphql
 ```
 
-Or, submit the same query via the browser at `http://localhost:8000/graphql`:
+Or submit the same query via the browser at `http://localhost:8000/graphql`:
 
 ```graphql
 query {
@@ -45,5 +45,5 @@ query {
 
 For more interesting examples, see:
 
-- [groundsim](https://github.com/followben/groundsim) - a more complex containerized example using FastAPI, Strawberry and Broadcaster that supports mutations, REST, a basic visualisation of the data in React, and deploys via CI/ CD to the cloud.
-- [datalogger](https://github.com/followben/datalogger) - another sample GraphQL api using Django and Graphene.
+- [groundsim](https://github.com/followben/groundsim) - a more complex containerized graphql project using a similar stack which includes mutations, REST, a basic visualisation of the data in React, and deploys via CI/ CD to the cloud.
+- [datalogger](https://github.com/followben/datalogger) - an older sample api using Django and Graphene.
