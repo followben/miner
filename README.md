@@ -4,7 +4,7 @@ A simple project demonstrating the use of [FastAPI](https://fastapi.tiangolo.com
 
 ## Quick Start
 
-Ensure python 3.7+ is on your path, then:
+Ensure python 3.7+ is on your path, then in the root of this project:
 
 ```bash
 % python -m venv venv
