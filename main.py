@@ -62,7 +62,7 @@ class Query:
             "name": "Ashley Miner",
             "address": {
                 "number": 99,
-                "street": "Hylite St",
+                "street": "Hyalite St",
                 "city": "Sydney",
                 "state": "NSW",
             },
