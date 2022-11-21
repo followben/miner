@@ -41,7 +41,8 @@ query {
 }
 ```
 
-If this were a more complex project, I'd:
+If this were a more sophisticated api, I'd:
+- split the project into appropriate modules and packages (a single file app is appropriate here, but doesn't work in a real project)
 - add testing via pytest (thanks to the runtime checks in Strawberry and Pydantic and static analysis via Pylance/ MyPy, there's not really much to test here outside of testing the dependencies themselves)
 - add a mutation to create a `Person` and persist it somewhere (in memory? Redis? MongoDB? PostgreSQL?)
 - containerize the api for production (and it's dependencies via compose for local development)
@@ -52,5 +53,5 @@ If this were a more complex project, I'd:
 
 For more interesting examples, see:
 
-- [groundsim](https://github.com/followben/groundsim) - a higher complexity (though still simple) graphql project using a similar stack which includes mutations, REST, a basic visualisation of the data in React, containerization, cloud deployment via CI/ CD etc.
+- [groundsim](https://github.com/followben/groundsim) - a more complex (albeit still simple) graphql project using a similar stack which includes mutations, REST, a basic visualisation of the data in React, containerization, cloud deployment via CI/ CD etc.
 - [datalogger](https://github.com/followben/datalogger) - an older sample api using Django and Graphene.
